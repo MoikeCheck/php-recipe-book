@@ -1,7 +1,7 @@
 <?php 
    
  //connect to the data base
-$conn = mysqli_connect ('localhost', 'mike', '3$kHH|9zrVr#Qup&', 'php-recipe-book');
+$conn = mysqli_connect ('eu-cdbr-west-03.cleardb.net', 'bb8d4bf4bec043', 'c1fddf66', 'recipes');
 
 //check connect 
 if(!$conn){
