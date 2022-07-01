@@ -1,7 +1,7 @@
 <?php 
    
  //connect to the data base
-$conn = mysqli_connect ('localhost', 'mike', 'miya3124', 'php-recipe-book');
+$conn = mysqli_connect ('localhost', 'mike', '3$kHH|9zrVr#Qup&', 'php-recipe-book');
 
 //check connect 
 if(!$conn){
