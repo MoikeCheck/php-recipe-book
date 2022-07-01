@@ -1,6 +1,7 @@
 <head>
     <title> Recipe Book</title>
      <!-- Compiled and minified CSS -->
+     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 <style type="text/css">
     .brand{
