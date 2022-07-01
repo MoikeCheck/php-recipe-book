@@ -1,5 +1,7 @@
 <?php 
 
+include('config/db_connect.php');
+
 $email = $title = $ingredients = '';
 $errors = array('email' => '', 'title' => '', 'ingredients' => '');
 
@@ -32,13 +34,30 @@ if(isset($_POST['submit'])){
         }
     }
 
-    if(!array_filter($errors)){
-        header('Location: index.php');
+	if(array_filter($errors)){
+        //echo 'errors in form';
+    } else {
+        // escape sql chars
+        $email = mysqli_real_escape_string($conn, $_POST['email']);
+        $title = mysqli_real_escape_string($conn, $_POST['title']);
+        $ingredients = mysqli_real_escape_string($conn, $_POST['ingredients']);
+
+        // create sql
+        $sql = "INSERT INTO recipes(title,email,ingredients) VALUES('$title','$email','$ingredients')";
+
+        // save to db and check
+        if(mysqli_query($conn, $sql)){
+            // success
+            header('Location: index.php');
+        } else {
+            echo 'query error: '. mysqli_error($conn);
+        }
+        
     }
-}  // end of POST check.
+
+} // end POST check
 
 ?>
-d
 
 <!DOCTYPE html>
 <html lang="en">
